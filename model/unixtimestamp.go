@@ -30,3 +30,26 @@ func (v *UnixTimestamp) UnmarshalJSON(src []byte) error {
 	v.Time = time.Unix(value, 0)
 	return nil
 }
+
+// NullUnixTimestamp is a nullable [UnixTimestamp]
+type NullUnixTimestamp struct {
+	Valid     bool
+	Timestamp UnixTimestamp
+}
+
+// MarshalJSON will convert NullInt64 to json value or null
+func (v NullUnixTimestamp) MarshalJSON() ([]byte, error) {
+	if v.Valid {
+		return v.Timestamp.MarshalJSON()
+	}
+	return []byte("null"), nil
+}
+
+// UnmarshalJSON will return json encoded for value
+func (v *NullUnixTimestamp) UnmarshalJSON(data []byte) error {
+	if string(data) == "null" {
+		v.Timestamp, v.Valid = UnixTimestamp{}, false
+		return nil
+	}
+	return v.Timestamp.UnmarshalJSON(data)
+}
