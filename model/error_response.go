@@ -10,7 +10,7 @@ type ErrorResponseError struct {
 	// Message describing an error.
 	ErrorMsg string `json:"error_msg"`
 	// Path at which an error occurred.
-	ErrorPath *string `json:"error_path,omitempty"`
+	ErrorPath string `json:"error_path,omitempty"`
 	// Name of the error.
 	ErrorName string `json:"error_name"`
 }

@@ -64,15 +64,15 @@ type SubCustomField struct {
 	// pre-filled to that field. This field is optional, but required when this custom field object is set to `required = true`.  **NOTE:**
 	// Editable merge fields are only supported for single signer requests (or the first signer in ordered signature requests). If used when
 	// there are multiple signers in an unordered signature request, the editor value is ignored and the field won't be editable.
-	Editor *string `json:"editor,omitempty"`
+	Editor string `json:"editor,omitempty"`
 	// The name of a custom field. When working with pre-filled data, the custom field's name must have a matching merge field name or the
 	// field will remain empty on the document during signing.
 	Name string `json:"name"`
 	// Used to set an editable merge field when working with pre-filled data. When `true`, the custom field must specify a signer role in
 	// `editor`.
-	Required *bool `json:"required,omitempty"`
+	Required bool `json:"required,omitempty"`
 	// The string that resolves (aka \"pre-fills\") to the merge field on the final document(s) used for signing.
-	Value *string `json:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 // SubSignatureRequestTemplateSigner struct for SubSignatureRequestTemplateSigner
@@ -84,17 +84,17 @@ type SubSignatureRequestTemplateSigner struct {
 	// The email address of the signer.
 	EmailAddress string `json:"email_address"`
 	// The 4- to 12-character access code that will secure this signer's signature page.
-	Pin *string `json:"pin,omitempty"`
+	Pin string `json:"pin,omitempty"`
 	// An E.164 formatted phone number.  By using the feature, you agree you are responsible for obtaining a signer's consent to receive
 	// text messages from Dropbox Sign related to this signature request and confirm you have obtained such consent from all signers prior
 	// to enabling SMS delivery for this signature request. [Learn
 	// more](https://faq.hellosign.com/hc/en-us/articles/15815316468877-Dropbox-Sign-SMS-tools-add-on).  **NOTE:** Not available in test
 	// mode and requires a Standard plan or higher.
-	SmsPhoneNumber *string `json:"sms_phone_number,omitempty"`
+	SmsPhoneNumber string `json:"sms_phone_number,omitempty"`
 	// Specifies the feature used with the `sms_phone_number`. Default `authentication`.  If `authentication`, signer is sent a verification
 	// code via SMS that is required to access the document.  If `delivery`, a link to complete the signature request is delivered via SMS
 	// (_and_ email).
-	SmsPhoneNumberType *string `json:"sms_phone_number_type,omitempty"`
+	SmsPhoneNumberType string `json:"sms_phone_number_type,omitempty"`
 }
 
 // SubSigningOptions This allows the requester to specify the types allowed for creating a signature.  **NOTE:** If `signing_options` are

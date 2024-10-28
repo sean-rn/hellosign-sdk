@@ -30,18 +30,18 @@ type SignatureRequestResponse struct {
 	// Date](https://developers.hellosign.com/docs/signature-request/expiration/) for details.
 	ExpiresAt *UnixTimestamp `json:"expires_at,omitempty"`
 	// Whether or not the SignatureRequest has been fully executed by all signers.
-	IsComplete *bool `json:"is_complete,omitempty"`
+	IsComplete bool `json:"is_complete,omitempty"`
 	// Whether or not the SignatureRequest has been declined by a signer.
-	IsDeclined *bool `json:"is_declined,omitempty"`
+	IsDeclined bool `json:"is_declined,omitempty"`
 	// Whether or not an error occurred (either during the creation of the SignatureRequest or during one of the signings).
-	HasError *bool `json:"has_error,omitempty"`
+	HasError bool `json:"has_error,omitempty"`
 	// The URL where a copy of the request's documents can be downloaded.
-	FilesUrl *string `json:"files_url,omitempty"`
+	FilesUrl string `json:"files_url,omitempty"`
 	// The URL where a signer, after authenticating, can sign the documents. This should only be used by users with existing Dropbox Sign
 	// accounts as they will be required to log in before signing.
 	SigningUrl string `json:"signing_url,omitempty"`
 	// The URL where the requester and the signers can view the current status of the SignatureRequest.
-	DetailsUrl *string `json:"details_url,omitempty"`
+	DetailsUrl string `json:"details_url,omitempty"`
 	// A list of email addresses that were CCed on the SignatureRequest. They will receive a copy of the final PDF once all the signers have
 	// signed.
 	CcEmailAddresses []string `json:"cc_email_addresses,omitempty"`
@@ -72,11 +72,11 @@ type SignatureRequestResponseCustomFieldBase struct {
 	// The name of the Custom Field.
 	Name string `json:"name"`
 	// A boolean value denoting if this field is required.
-	Required *bool `json:"required,omitempty"`
+	Required bool `json:"required,omitempty"`
 	// The unique ID for this field.
-	ApiId *string `json:"api_id,omitempty"`
+	ApiId string `json:"api_id,omitempty"`
 	// The name of the Role that is able to edit this field.
-	Editor *string `json:"editor,omitempty"`
+	Editor string `json:"editor,omitempty"`
 }
 
 // SignatureRequestResponseAttachment Signer attachments.
@@ -99,20 +99,20 @@ type SignatureRequestResponseAttachment struct {
 // filled in by the signers.
 type SignatureRequestResponseDataBase struct {
 	// The unique ID for this field.
-	ApiId *string `json:"api_id,omitempty"`
+	ApiId string `json:"api_id,omitempty"`
 	// The ID of the signature to which this response is linked.
-	SignatureId *string `json:"signature_id,omitempty"`
+	SignatureId string `json:"signature_id,omitempty"`
 	// The name of the form field.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 	// A boolean value denoting if this field is required.
-	Required *bool   `json:"required,omitempty"`
-	Type     *string `json:"type,omitempty"`
+	Required bool   `json:"required,omitempty"`
+	Type     string `json:"type,omitempty"`
 }
 
 // SignatureRequestResponseSignatures An array of signature objects, 1 for each signer.
 type SignatureRequestResponseSignatures struct {
 	// Signature identifier.
-	SignatureId *string `json:"signature_id,omitempty"`
+	SignatureId string `json:"signature_id,omitempty"`
 	// Signer Group GUID
 	SignerGroupGuid string `json:"signer_group_guid,omitempty"`
 	// The email address of the signer.
@@ -124,7 +124,7 @@ type SignatureRequestResponseSignatures struct {
 	// If signer order is assigned this is the 0-based index for this signer.
 	Order *int `json:"order,omitempty"`
 	// The current status of the signature. eg: awaiting_signature, signed, declined.
-	StatusCode *string `json:"status_code,omitempty"`
+	StatusCode string `json:"status_code,omitempty"`
 	// The reason provided by the signer for declining the request.
 	DeclineReason string `json:"decline_reason,omitempty"`
 	// Time that the document was signed or null.
@@ -134,7 +134,7 @@ type SignatureRequestResponseSignatures struct {
 	// The time the last reminder email was sent to the signer or null.
 	LastRemindedAt *UnixTimestamp `json:"last_reminded_at,omitempty"`
 	// Boolean to indicate whether this signature requires a PIN to access.
-	HasPin *bool `json:"has_pin,omitempty"`
+	HasPin bool `json:"has_pin,omitempty"`
 	// Boolean to indicate whether this signature has SMS authentication enabled.
 	HasSmsAuth bool `json:"has_sms_auth,omitempty"`
 	// Boolean to indicate whether this signature has SMS delivery enabled.

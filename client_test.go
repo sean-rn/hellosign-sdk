@@ -44,7 +44,7 @@ func TestClient(t *testing.T) {
 
 func setupMockAPIServer() *httptest.Server {
 	mux := http.NewServeMux()
-	mux.HandleFunc("POST /v3/signature_request/create_embedded_with_template", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/v3/signature_request/create_embedded_with_template", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "testdata/create_embedded_with_template.resp.json")
 	})
 	return httptest.NewServer(mux)
