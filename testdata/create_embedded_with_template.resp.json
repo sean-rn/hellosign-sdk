@@ -16,6 +16,13 @@
         "has_error": false,
         "custom_fields": [
             {
+                "type": "text",
+                "value": "",
+                "name": "FullName1",
+                "required": true,
+                "api_id": "af20eb71-c2eb-aaaa-9c50-ddcd71193d2f"
+            },
+            {
                 "name": "Checkbox1",
                 "type": "checkbox",
                 "required": true,

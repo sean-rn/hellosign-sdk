@@ -3,7 +3,7 @@ package model
 // EventCallbackRequestEvent Basic information about the event that occurred.
 type EventCallbackRequestEvent struct {
 	// Time the event was created (using Unix time).
-	EventTime string `json:"event_time"`
+	EventTime UnixTimestamp `json:"event_time"`
 	// Type of callback event that was triggered.
 	EventType string `json:"event_type"`
 	// Generated hash used to verify source of event data.
