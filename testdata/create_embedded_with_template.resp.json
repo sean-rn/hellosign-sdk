@@ -1,0 +1,64 @@
+{
+    "signature_request": {
+        "signature_request_id": "ebaae602348695a4c712aa0f22614986d03caaaa",
+        "test_mode": true,
+        "title": "Agreement - Medical",
+        "original_title": "Agreement - Medical",
+        "subject": "Agreement - Medical",
+        "message": null,
+        "metadata": {
+            "partner_user_id": 3456
+        },
+        "created_at": 1730137243,
+        "expires_at": null,
+        "is_complete": false,
+        "is_declined": false,
+        "has_error": false,
+        "custom_fields": [
+            {
+                "name": "Checkbox1",
+                "type": "checkbox",
+                "required": true,
+                "api_id": "d52e6378-5eda-aaaa-9533-6a335e7372e4",
+                "editor": null,
+                "value": false
+            }
+        ],
+        "response_data": [],
+        "signing_url": null,
+        "signing_redirect_url": null,
+        "final_copy_uri": "/v3/signature_request/final_copy/ebaae602348695a4c712aa0f22614986d03caaaa",
+        "files_url": "https://api.hellosign.com/v3/signature_request/files/ebaae602348695a4c712aa0f22614986d03caaaa",
+        "details_url": "https://app.hellosign.com/home/manage?guid=ebaae602348695a4c712aa0f22614986d03caaaa",
+        "requester_email_address": "requester@example.org",
+        "signatures": [
+            {
+                "signature_id": "bbbbde3c840cd0810a9425229610bbbb",
+                "has_pin": false,
+                "has_sms_auth": false,
+                "has_sms_delivery": false,
+                "sms_phone_number": null,
+                "signer_email_address": "signer.one@example.org",
+                "signer_name": "Signer One",
+                "signer_role": "First",
+                "order": null,
+                "status_code": "awaiting_signature",
+                "signed_at": null,
+                "last_viewed_at": null,
+                "last_reminded_at": null,
+                "error": null
+            }
+        ],
+        "cc_email_addresses": [],
+        "template_ids": [
+            "cccc6ad681229567aab20cd83a69cf18fb2cccc"
+        ],
+        "client_id": "ddddb5e5c34b929957e24b17aa52dddd"
+    },
+    "warnings": [
+        {
+            "warning_msg": "Using Templates generated as Template Links is not supported in the API",
+            "warning_name": "template_link"
+        }
+    ]
+}
